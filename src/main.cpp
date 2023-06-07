@@ -125,7 +125,7 @@ void setup()
   transport.setWifiPass(WIFI_PASS);
   transport.setNtpServer(NTP);
   transport.setUseTls(true);
-  transport.setCerts(lokiCert, strlen(lokiCert));
+  transport.setCerts(certs, strlen(certs));
   transport.setDebug(Serial); // Remove this line to disable debug logging of the transport layer.
   if (!transport.begin())
   {
@@ -138,6 +138,14 @@ void setup()
   // Configure the client
   prom.setUrl(PROM_URL);
   prom.setPath((char *)PROM_PATH);
+  if (PROM_USER != "")
+  {
+    prom.setUser(PROM_USER);
+  }
+  if (PROM_PASS != "")
+  {
+    prom.setPass(PROM_PASS);
+  }
   prom.setPort(443);
   prom.setDebug(Serial); // Remove this line to disable debug logging of the client.
   if (!prom.begin())

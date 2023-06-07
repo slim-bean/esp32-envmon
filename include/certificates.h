@@ -8,7 +8,7 @@
  * Also includes the LetsEncrypt root CA.
  */
 
-static const char grafanaCert[] PROGMEM = R"EOF(
+static const char certs[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
 MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
 MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
